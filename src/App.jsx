@@ -4,10 +4,10 @@ import './App.css'
 import LandingPage from '@/pages/Landing'
 import AppLayout from '@/layouts/AppLayout'
 import Onboarding from '@/pages/Onboarding'
-import JobListing from './pages/job-listing';
-import JobPage from './pages/job';
+import JobListing from './pages/Job-listing';
+import JobPage from './pages/Job';
 import SavedJobs from './pages/Saved-job';
-import MyJobs from './pages/my-jobs';
+import MyJobs from './pages/My-jobs';
 import PostJob from './pages/Post-job';
 import { ThemeProvider } from './components/theme-provider';
 
