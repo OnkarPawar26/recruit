@@ -4,11 +4,11 @@ import './App.css'
 import LandingPage from '@/pages/Landing'
 import AppLayout from '@/layouts/AppLayout'
 import Onboarding from '@/pages/Onboarding'
-import JobListing from './pages/Job-listing';
+import JobListing from './pages/JobListing';
 import JobPage from './pages/Job';
-import SavedJobs from './pages/Saved-job';
-import MyJobs from './pages/My-jobs';
-import PostJob from './pages/Post-job';
+import SavedJobs from './pages/SavedJob';
+import MyJobs from './pages/MyJobs';
+import PostJob from './pages/PostJob';
 import { ThemeProvider } from './components/theme-provider';
 
 import ProtectedRoute from './components/ProtectedRoute';
