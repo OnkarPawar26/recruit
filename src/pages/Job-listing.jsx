@@ -27,14 +27,13 @@ const JobListing = () => {
   const { isLoaded } = useUser();
 
   const {
-    // loading: loadingCompanies,
-    data: companies,
+    data: companies = [], // ✅ default to []
     fn: fnCompanies,
   } = useFetch(getCompanies);
 
   const {
     loading: loadingJobs,
-    data: jobs,
+    data: jobs = [], // ✅ default to []
     fn: fnJobs,
   } = useFetch(getJobs, {
     location,
@@ -57,7 +56,6 @@ const JobListing = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     let formData = new FormData(e.target);
-
     const query = formData.get("search-query");
     if (query) setSearchQuery(query);
   };
@@ -73,10 +71,12 @@ const JobListing = () => {
   }
 
   return (
-    <div className="">
+    <div>
       <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Latest Jobs
       </h1>
+
+      {/* Search form */}
       <form
         onSubmit={handleSearch}
         className="h-14 flex flex-row w-full gap-2 items-center mb-3"
@@ -85,31 +85,32 @@ const JobListing = () => {
           type="text"
           placeholder="Search Jobs by Title.."
           name="search-query"
-          className="h-full flex-1  px-4 text-md"
+          className="h-full flex-1 px-4 text-md"
         />
         <Button type="submit" className="h-full sm:w-28" variant="blue">
           Search
         </Button>
       </form>
 
+      {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-2">
+        {/* Location filter */}
         <Select value={location} onValueChange={(value) => setLocation(value)}>
           <SelectTrigger>
             <SelectValue placeholder="Filter by Location" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              {State.getStatesOfCountry("IN").map(({ name }) => {
-                return (
-                  <SelectItem key={name} value={name}>
-                    {name}
-                  </SelectItem>
-                );
-              })}
+              {State.getStatesOfCountry("IN").map(({ name }) => (
+                <SelectItem key={name} value={name}>
+                  {name}
+                </SelectItem>
+              ))}
             </SelectGroup>
           </SelectContent>
         </Select>
 
+        {/* Company filter */}
         <Select
           value={company_id}
           onValueChange={(value) => setCompany_id(value)}
@@ -119,16 +120,15 @@ const JobListing = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              {companies?.map(({ name, id }) => {
-                return (
-                  <SelectItem key={name} value={id}>
-                    {name}
-                  </SelectItem>
-                );
-              })}
+              {companies?.map(({ name, id }) => (
+                <SelectItem key={id} value={id}>
+                  {name}
+                </SelectItem>
+              ))}
             </SelectGroup>
           </SelectContent>
         </Select>
+
         <Button
           className="sm:w-1/2"
           variant="destructive"
@@ -138,22 +138,21 @@ const JobListing = () => {
         </Button>
       </div>
 
+      {/* Jobs list */}
       {loadingJobs && (
         <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
       )}
 
-      {loadingJobs === false && (
+      {!loadingJobs && (
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {jobs?.length ? (
-            jobs.map((job) => {
-              return (
-                <JobCard
-                  key={job.id}
-                  job={job}
-                  savedInit={job?.saved?.length > 0}
-                />
-              );
-            })
+          {jobs?.length > 0 ? (
+            jobs.map((job) => (
+              <JobCard
+                key={job.id}
+                job={job}
+                savedInit={job?.saved?.length > 0}
+              />
+            ))
           ) : (
             <div>No Jobs Found 😢</div>
           )}

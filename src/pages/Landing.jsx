@@ -34,9 +34,9 @@ const LandingPage = () => {
           <span className='flex items-center gap-2 sm:gap-6'>
             and get{""}
             <img 
-              src='/hirred.png' 
+              src='/logo.png' 
               alt='recruit logo' 
-              className="h-14 sm:h-24 lg:h-32"/>
+              className="h-60 sm:h-24 lg:h-32"/>
           </span>
         </h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl">
@@ -67,7 +67,7 @@ const LandingPage = () => {
     </Carousel>
 
       {/* banner */}
-      <img src="/recruit_banner.png" className="w-full"/>
+      <img src="/banner.png" className="w-full"/>
 
       <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {/* cards */}

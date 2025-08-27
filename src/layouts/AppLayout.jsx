@@ -1,5 +1,4 @@
 import Header from "@/components/header";
-import TestSupabase from "@/components/TestSupabase";
 import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
