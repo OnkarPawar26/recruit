@@ -36,7 +36,7 @@ const LandingPage = () => {
             <img 
               src='/logo.png' 
               alt='recruit logo' 
-              className="h-60 sm:h-24 lg:h-32"/>
+              className="h-14 sm:h-24 lg:h-32"/>
           </span>
         </h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl">
