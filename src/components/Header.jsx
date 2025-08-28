@@ -33,7 +33,7 @@ const Header = () => {
     <>
       <nav className="py-4 flex justify-between items-center">
         <Link to="/">
-          <img src="/logo.png" className="h-20" alt="Recruit Logo"  height={"1000px"}/>
+          <img src="/logo.png" className="h-20" alt="Recruit Logo"  />
         </Link>
 
         <div className="flex gap-8">
