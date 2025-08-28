@@ -47,34 +47,36 @@ With a clean UI and robust backend, Recruit ensures smooth job posting, applicat
 
 ---
 
-## 📦 Installation  
+## 📦 Installation
 
-1. **Clone the repository**:  
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/OnkarPawar26/recruit.git
    cd recruit
-
----
+   ```
 
 2. **Install dependencies**:
-  ```bash
-  npm install
 
----
+   ```bash
+   npm install
+   ```
 
 3. **Configure environment variables**:
 
-  Create a .env file in the root directory and add your Supabase credentials:
-  ```.env
-  VITE_SUPABASE_URL=your-supabase-url
-  VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
-  VITE_CLERK_PUBLISHABLE_KEY=your-clerk-key
----
+   Create a `.env` file in the root directory and add your Supabase credentials:
+
+   ```env
+   VITE_SUPABASE_URL=your-supabase-url
+   VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+   VITE_CLERK_PUBLISHABLE_KEY=your-clerk-key
+   ```
 
 4. **Start the development server**:
-  ```bash
-  npm run dev
+
+   ```bash
+   npm run dev
+   ```
 
 ---
 
@@ -106,6 +108,7 @@ recruit/
 ├── vercel.json         # Vercel deployment configuration
 └── vite.config.js      # Vite configuration
 
+```
 
 ---
 
@@ -116,4 +119,6 @@ recruit/
 - [Shadcn UI](https://ui.shadcn.com/) for modern UI components.  
 - [Supabase](https://supabase.com/) for backend services.  
 - [Clerk](https://clerk.com/) for seamless authentication.  
-- [Vercel](https://vercel.com/) for deployment.  
+- [Vercel](https://vercel.com/) for deployment. 
+
+---
